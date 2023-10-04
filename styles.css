@@ -1,0 +1,164 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f00;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para el encabezado */
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #131211;
+    font-family: 'Cursive', cursive;
+    text-transform: uppercase;
+}
+
+/* Estilos para el producto */
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ff4500;
+    border-radius: 10px;
+}
+
+.product-details {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.product-details h2 {
+    font-size: 2em;
+    color: #ff4500;
+}
+
+.price span {
+    font-size: 1.5em;
+    color: #ff0000;
+}
+
+/* Estilos para las opciones de suscripción */
+.subscription-options label {
+    font-size: 1.2em;
+    color: #f9f5f5;
+}
+
+.subscription-options div {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.subscription-options input[type="radio"] {
+    margin-right: 5px;
+}
+
+.subscription-options p {
+    color: #666;
+}
+
+/* Estilos para el selector de país */
+label[for="country"] {
+    font-size: 1.2em;
+    color: #f3eeee;
+    margin-top: 10px;
+}
+
+#country {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: #222;
+    color: #fff;
+}
+
+/* Estilos para el selector de método de pago */
+.payment-methods label {
+    font-size: 1.2em;
+    color: #000;
+    margin-top: 10px;
+}
+
+#paymentMethod {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: #222;
+    color: #fff;
+}
+
+/* Estilos para la cantidad */
+.quantity label {
+    font-size: 1.2em;
+    color: #000;
+    margin-top: 10px;
+}
+
+.input-quantity {   
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: #222;
+    color: #fff;
+}
+
+/* Estilos para el botón de WhatsApp */
+.add-to-cart {
+    margin-top: 20px;
+}
+
+#whatsapp-link img {
+    width: 200px;
+}
+
+/* Estilos para la descripción y la información adicional */
+.description, .additional-information {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.description h4, .additional-information h4 {
+    font-size: 1.5em;
+    color: #ff4500;
+}
+
+.description p, .additional-information p {
+    color: #000;
+}

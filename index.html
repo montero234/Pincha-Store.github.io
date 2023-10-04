@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PINCHA-STORE</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para el cuerpo de la página */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #c12323;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Estilos para el encabezado */
+        header {
+            background-color: #090909;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5em;
+        }
+
+        /* Estilo para el título principal */
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #fff;
+            font-family: 'Cursive', cursive;
+            text-transform: uppercase;
+        }
+
+        /* Estilos para los contenedores principales */
+        .container-title, .container-info-product, .container-countries-and-payment {
+            background-color: #111;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+            color: #fff;
+            text-align: center; /* Centrar el contenido */
+        }
+
+        /* Estilos para el precio */
+        .container-price span {
+            font-size: 1.5em;
+            color: #ff3333;
+        }
+
+        /* Estilos para los botones */
+        .btn-clean {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-clean:hover {
+            background-color: #ff5500;
+        }
+
+        /* Estilos para el texto de suscripción */
+        .form-group label {
+            font-size: 1.2em;
+            color: #fff;
+        }
+
+        /* Estilos para los íconos */
+        .fa-solid {
+            font-size: 1.2em;
+            margin-left: 5px;
+            color: #ff6600;
+        }
+
+        /* Estilos para el enlace de WhatsApp */
+        a[aria-label="Chat on WhatsApp"] img {
+            width: 200px;
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+
+        /* Estilos para enlaces de pie de página */
+        footer a {
+            color: #ff6600;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Estilos para enlaces de pie de página al pasar el mouse */
+        footer a:hover {
+            color: #ff5500;
+        }
+
+        /* Estilos para el contenedor de métodos de pago */
+        .container-payment-methods {
+            background-color: #131313;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgb(255, 255, 255);
+        }
+
+        /* Estilos para las opciones de pago */
+        .payment-option {
+            background-color: #faf8f8;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BIENVENIDOS A PINCHA-STORE ONLINE</h1>
+    </header>
+
+    <div class="container-title">Premium Lords Bot</div>
+
+    <main>
+       <!-- Contenido principal aquí -->
+<div class="container-img">
+    <img src="Lord.png" alt="imagen-producto" style="display: block; margin: 0 auto;">
+</div>
+
+
+        <!-- Modificar el campo de suscripción -->
+        <div class="container-info-product">
+            <div class="container-price">
+                <span>$7.00</span> <!-- Precio para el primer mes -->
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+
+            <div class="container-details-product">
+                <div class="form-group">
+                    <label>TIPO DE SUSCRIPCIÓN</label>
+                    <div>
+                        <input type="radio" name="subscription-type" id="mensual" value="mensual">
+                        <label for="mensual">Un Mes - $7</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="subscription-type" id="mensuales" value="mensuales">
+                        <label for="mensuales">Mensual - $7 primer mes, $4 mensualidad</label>
+                    </div>
+                    <p>(Cancelar en cualquier momento)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor general de países y métodos de pago -->
+        <div class="container-countries-and-payment">
+            <!-- Contenedor de países -->
+            <div class="container-countries">
+                <label for="country">SELECCIONA TU PAÍS</label>
+                <select id="country">
+                    <option value="Argentina">Argentina</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Venezuela">Venezuela</option>
+                    <option value="Guatemala">Guatemala</option>
+                    <option value="USA">USA</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Peru">Peru</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Otros">Otros</option>
+                </select>
+            </div>
+
+            <!-- Contenedor de métodos de pago -->
+            <div class="container-payment-methods">
+                <label for="paymentMethod">SELECCIONA EL MÉTODO DE PAGO</label>
+                <select id="paymentMethod">
+                    <!-- Opciones de Argentina -->
+                    <div class="payment-option">
+                        <option value="Mercado Pago" data-country="Argentina">Mercado Pago</option>
+                    </div>
+                    <!-- Opciones de Colombia -->
+                    <div class="payment-option">
+                        <option value="Neki" data-country="Colombia">Neki</option>
+                    </div>
+                    <!-- Opciones de Venezuela -->
+                    <div class="payment-option">
+                        <option value="Banco Venezuela" data-country="Venezuela">Banco Venezuela</option>
+                    </div>
+                    <!-- Opciones de Guatemala -->
+                    <div class="payment-option">
+                        <option value="Cuenta Monetaria Banco Industrial Guatemala" data-country="Guatemala">Cuenta Monetaria Banco Industrial Guatemala</option>
+                    </div>
+                    <!-- Opciones de USA -->
+                    <div class="payment-option">
+                        <option value="Zelle" data-country="USA">Zelle</option>
+                    </div>
+                    <!-- Opciones de Chile -->
+                    <div class="payment-option">
+                        <option value="Banco Estado - Cuenta RUT" data-country="Chile">Banco Estado - Cuenta RUT</option>
+                    </div>
+                    <!-- Opciones de Ecuador -->
+                    <div class="payment-option">
+                        <option value="Banco Pichincha" data-country="Ecuador">Banco Pichincha</option>
+                    </div>
+                    <!-- Opciones de Mexico -->
+                    <div class="payment-option">
+                        <option value="BBVA" data-country="Mexico">BBVA</option>
+                    </div>
+                    <!-- Opciones de Peru -->
+                    <div class="payment-option">
+                        <option value="Yape" data-country="Peru">Yape</option>
+                    </div>
+                    <!-- Opciones de Brasil -->
+                    <div class="payment-option">
+                        <option value="Picpay" data-country="Brasil">Picpay</option>
+                    </div>
+                    <!-- Opciones de Otros -->
+                    <div class="payment-option">
+                        <option value="Binance" data-country="Otros">Binance</option>
+                    </div>
+                    <div class="payment-option">
+                        <option value="Wize" data-country="Otros">Wise</option>
+                    </div>
+                </select>
+            </div>
+        </div>
+
+        <!-- Resto del contenido principal -->
+        <center><div class="form-group">
+            <label for="quantity">CANTIDAD</label>
+            <div class="container-add-cart">
+                <div class="container-quantity">
+                    <input type="number" placeholder="1" value="1" min="1" class="input-quantity">
+                    <div class="btn-increment-decrement">
+                        <i class="fa-solid fa-chevron-up" id="increment"></i>
+                        <i class="fa-solid fa-chevron-down" id="decrement"></i>
+                    </center>
+                </div>
+                <a aria-label="Chat on WhatsApp" href="#" id="whatsapp-link">
+					<center><img alt="Chat on WhatsApp" src="WhatsAppButtonGreenLarge.png"></center>
+                    
+                </a>
+            </div>
+			<div style="margin-top: 20px;"></div>
+			<center><a href="https://forms.gle/3Cv1EhYVsAbNvFuP7" target="_blank" class="btn-clean">Configurar Bot</a></center>
+            <div class="container-description">
+                <div class="title-description">
+                    <p>&nbsp;</p>
+                    <div class="container-description">
+                    <div class="title-description">
+                    <h4 style="padding-left: 210px;">Descripci&oacute;n</h4>
+                    <div class="text-description">
+                    <p style="padding-left: 60px;">Investigaci&oacute;n, construcci&oacute;n y talentos automotrices</p>
+                    <p style="padding-left: 60px;">Entrenamiento autom&aacute;tico (trampas y tropas, T5 incluido)</p>
+                    <p style="padding-left: 60px;">Suministro autom&aacute;tico</p>
+                    <p style="padding-left: 60px;">Refugio autom&aacute;tico / blindaje / protecci&oacute;n de reuni&oacute;n</p>
+                    <p style="padding-left: 60px;">Caja misteriosa autom&aacute;tica, cofres VIP, misiones de administraci&oacute;n / gramio, misiones territoriales y regalos del centro comercial</p>
+                    <p style="padding-left: 60px;">Gesti&oacute;n de gremio (Chat de gremio, Crear / Salir / Unirse a gremio)</p>
+                    <p style="padding-left: 60px;">Regalos del gremio, env&iacute;o / pedido de ayuda y paquetes de fortuna</p>
+                    <p style="padding-left: 60px;">Banco del gremio de autom&oacute;viles</p>
+                    <p style="padding-left: 60px;">Reuni&oacute;n autom&aacute;tica</p>
+                    <p style="padding-left: 60px;">Caza autom&aacute;tica de monstruos</p>
+                    <p style="padding-left: 60px;">Comercio de buques de carga autom&aacute;tica</p>
+                    <p style="padding-left: 60px;">Aceleraciones autom&aacute;ticas (construcci&oacute;n, investigaci&oacute;n, entrenamiento, curaci&oacute;n, trampas, pactos, muro)</p>
+                    <p style="padding-left: 60px;">Laberinto autom&aacute;tico y magnate del reino</p>
+                    <p style="padding-left: 60px;">Unirse autom&aacute;ticamente a los m&iacute;tines m&aacute;s oscuros</p>
+                    <p style="padding-left: 60px;">Auto Familiares (Entrenamiento / Habilidades / Fusi&oacute;n de Pactos)</p>
+                    <p style="padding-left: 60px;">Auto Heroes (contratar, subir de nivel, mejorar y actualizar)</p>
+                    <p style="padding-left: 60px;">Etapas / Cap&iacute;tulos de Auto Hero</p>
+                    <p style="padding-left: 60px;">Auto Coliseo</p>
+                    <p style="padding-left: 60px;">Gesti&oacute;n de inventario (Usar art&iacute;culos autom&aacute;ticos)</p>
+                    <p style="padding-left: 60px;">Tesoro autom&aacute;tico</p>
+                    <p style="padding-left: 60px;">Escaramuza autom&aacute;tica</p>
+                    <p style="padding-left: 60px;">Festival del gremio de autom&oacute;viles</p>
+                    <p style="padding-left: 60px;">Actualizaci&oacute;n de equipos de autom&oacute;viles / elaboraci&oacute;n / cambio</p>
+                    <p style="padding-left: 60px;">Enfrentamiento autom&aacute;tico del gremio</p>
+                    <p style="padding-left: 60px;">Seguimiento / estad&iacute;sticas de todos los regalos de jugadores</p>
+                    <p style="padding-left: 60px;">Programaci&oacute;n sin conexi&oacute;n</p>
+                    <p style="padding-left: 60px;">+ Mucho m&aacute;s</p>
+                    </div>
+                    </div>
+                    </div>
+
+            <div class="container-additional-information">
+                <div class="title-additional-information">
+				</script>            <div class="col-lg-9">
+					<div class="single-post-wrap" id="single-post-wrap">
+                        <center>
+                            <h1 class="post-title">Comandos de Banco</h1>
+                            <div id="toc-wrap" class="toc-wrap">
+                            <h3 style="text-align: justify; padding-left: 30px;">Si el nombre del jugador tiene un espacio, Utilice un gui&oacute;n bajo dentro del comando. Ejemplo: El jugador 1 se convertir&iacute;a en Jugador_1 (!setacc Jugador_1). O Utilice comillas alrededor del nombre. Ejemplo El jugador 1 se convertir&iacute;a en "Jugador 1" (!setacc "Jugador 1")</h3>
+                            </div>
+                            <h3 style="text-align: justify; padding-left: 30px;">Los saldos de los usuarios autorizados no son deducibles (saldo ilimitado), un usuario autorizado es esencialmente un administrador del banco. No pueden usar el comando Donar</h3>
+                            <h3 style="text-align: justify; padding-left: 30px;">De forma predeterminada, R4+ tiene acceso similar a los usuarios autorizados. Aseg&uacute;rese de que los rangos m&iacute;nimos de su comando sean apropiados.</h3>
+                            <div style="padding-left: 30px;">
+                            <h3 style="text-align: justify; padding-left: 30px;">El banco no responder&aacute; durante tareas de larga duraci&oacute;n, como las etapas de h&eacute;roe. Le sugerimos en su etapa de h&eacute;roe: Establecer un cap&iacute;tulo y etapa personalizados con 3 ☆ desbloqueados + Barrido y X10 habilitado.</h3>
+                            <h4 style="text-align: justify;">&nbsp;</h4>
+                            </div>
+                            </center>
+<div class="container-additional-information" style="text-align: justify;">
+<div class="title-additional-information">
+<div class="col-lg-9">
+<div id="single-post-wrap" class="single-post-wrap">
+<div class="container-additional-information">
+<div class="title-additional-information">
+<div class="col-lg-9">
+<h3 style="padding-left: 30px;"><!--kg-card-begin: markdown--></h3>
+<table style="width: 708px; height: 2000px; margin-left: auto; margin-right: auto;" border="2" cellspacing="0" cellpadding="10">
+    <thead>
+    <tr style="height: 13px;">
+    <th style="width: 125.823px; padding-left: 30px; height: 13px; text-align: center;">Comandos</th>
+    <th style="width: 196.177px; padding-left: 30px; height: 13px; text-align: center;">Funcion</th>
+    <th style="width: 93px; padding-left: 30px; height: 13px; text-align: center;">Ejemplo</th>
+    <th style="width: 120px; padding-left: 30px; height: 13px; text-align: center;">Resultado</th>
+    </tr>
+    </thead>
+    <tbody style="padding-left: 30px;">
+    <tr style="padding-left: 30px; height: 40px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 40px; text-align: center;">!payransom</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 40px;">Paga cualquier rescate pendiente por el l&iacute;der de cuentas.</td>
+    <td style="width: 93px; padding-left: 30px; height: 40px; text-align: center;">!payransom</td>
+    <td style="width: 120px; padding-left: 30px; height: 40px; text-align: center;">Se paga el rescate para el l&iacute;der de cuentas.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 26px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 26px; text-align: center;">!clearboard</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 26px; text-align: center;">Borra todas las misiones del tablero del Guild Fest.</td>
+    <td style="width: 93px; padding-left: 30px; height: 26px; text-align: center;">!clearboard</td>
+    <td style="width: 120px; padding-left: 30px; height: 26px; text-align: center;">Todas las misiones se eliminan.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 66px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 66px; text-align: center;">!ess</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 66px; text-align: center;">Env&iacute;a un correo conteniendo el estado del laboratorio de transmutaci&oacute;n.</td>
+    <td style="width: 93px; padding-left: 30px; height: 66px; text-align: center;">!ess</td>
+    <td style="width: 120px; padding-left: 30px; height: 66px; text-align: center;">Se le env&iacute;a un correo con el estado del laboratorio de transmutaci&oacute;n.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 80px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 80px; text-align: center;">!stats</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 80px; text-align: center;">Env&iacute;a estad&iacute;sticas de regalos de compras/monstruos que tienes</td>
+    <td style="width: 93px; padding-left: 30px; height: 80px; text-align: center;">!stats</td>
+    <td style="width: 120px; padding-left: 30px; height: 80px; text-align: center;">Informe de todos los regalos del gremio para ti desde el &uacute;ltimo reinicio de estad&iacute;sticas</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 40px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 40px; text-align: center;">!stats all</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 40px; text-align: center;">Env&iacute;a un resumen de la compra de tu gremio/monstruos.</td>
+    <td style="width: 93px; padding-left: 30px; height: 40px; text-align: center;">!stats all</td>
+    <td style="width: 120px; padding-left: 30px; height: 40px; text-align: center;">Env&iacute;a un resumen de la compra de tu gremio/monstruos.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 93px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 93px; text-align: center;">!pstats [Player_Name]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 93px; text-align: center;">Env&iacute;a estad&iacute;sticas de regalos por compra/monstruo que tiene este jugador.</td>
+    <td style="width: 93px; padding-left: 30px; height: 93px; text-align: center;">!pstats Simon_Cat</td>
+    <td style="width: 120px; padding-left: 30px; height: 93px; text-align: center;">Env&iacute;a un informe de las estad&iacute;sticas de regalos del gremio que "Simon Cat" tiene desde el &uacute;ltimo reinicio.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 26px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 26px; text-align: center;">!resetstats</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 26px; text-align: center;">Restablece las estad&iacute;sticas actuales de caza/compra a 0.</td>
+    <td style="width: 93px; padding-left: 30px; height: 26px; text-align: center;">&nbsp;</td>
+    <td style="width: 120px; padding-left: 30px; height: 26px; text-align: center;">&nbsp;</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 13px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 13px; text-align: center;">!gryphon</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 13px; text-align: center;">Utiliza la habilidad familiar Gryphon.</td>
+    <td style="width: 93px; padding-left: 30px; height: 13px; text-align: center;">&nbsp;</td>
+    <td style="width: 120px; padding-left: 30px; height: 13px; text-align: center;">&nbsp;</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 40px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 40px; text-align: center;">!reguser</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 40px; text-align: center;">vincula tu perfil de identificaci&oacute;n de discordia/telegrama con tu castillo en el juego, para permitirte usar comandos.</td>
+    <td style="width: 93px; padding-left: 30px; height: 40px; text-align: center;">!reguser 423423958239</td>
+    <td style="width: 120px; padding-left: 30px; height: 40px; text-align: center;">capaz de usar comandos en el chat bot</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 40px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 40px; text-align: center;">!unreguser</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 40px; text-align: center;">desvincula tu perfil de identificaci&oacute;n de discordia/telegrama con tu castillo en el juego, para permitirte usar comandos.</td>
+    <td style="width: 93px; padding-left: 30px; height: 40px; text-align: center;">!unreguser 423423958239</td>
+    <td style="width: 120px; padding-left: 30px; height: 40px; text-align: center;">no se pueden usar comandos en el chat bot</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 40px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 40px; text-align: center;">!pos</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 40px; text-align: center;">Env&iacute;a la ubicaci&oacute;n del Guild Bank</td>
+    <td style="width: 93px; padding-left: 30px; height: 40px; text-align: center;">!pos</td>
+    <td style="width: 120px; padding-left: 30px; height: 40px; text-align: center;">Informa la ubicaci&oacute;n exacta del Banco.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 40px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 40px; text-align: center;">!shield</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 40px; text-align: center;">Comprueba el tiempo del escudo.</td>
+    <td style="width: 93px; padding-left: 30px; height: 40px; text-align: center;">!shield</td>
+    <td style="width: 120px; padding-left: 30px; height: 40px; text-align: center;">Informe de cuando baja el escudo del Banco</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 26px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 26px; text-align: center;">!shield deploy</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 26px; text-align: center;">Despliega un escudo en el banco.</td>
+    <td style="width: 93px; padding-left: 30px; height: 26px; text-align: center;">!shield deploy</td>
+    <td style="width: 120px; padding-left: 30px; height: 26px; text-align: center;">El escudo se activa en el banco.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 40px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 40px; text-align: center;">!relocate [X] &lrm;[Y]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 40px; text-align: center;">Reubica el banco</td>
+    <td style="width: 93px; padding-left: 30px; height: 40px; text-align: center;">!relocate 243 209</td>
+    <td style="width: 120px; padding-left: 30px; height: 40px; text-align: center;">Reubica el banco a las coordenadas X:243 Y:209</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 53px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 53px; text-align: center;">!relocate rand</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 53px; text-align: center;">Se traslada a una posici&oacute;n aleatoria en el mapa.</td>
+    <td style="width: 93px; padding-left: 30px; height: 53px; text-align: center;">!relocate rand</td>
+    <td style="width: 120px; padding-left: 30px; height: 53px; text-align: center;">Reubicar el banco en una posici&oacute;n aleatoria en el mapa.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 40px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 40px; text-align: center;">!relocatekvk [K]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 40px; text-align: center;">Reubicarse aleatoriamente en el Reino KVK objetivo</td>
+    <td style="width: 93px; padding-left: 30px; height: 40px; text-align: center;">!relocatekvk 60</td>
+    <td style="width: 120px; padding-left: 30px; height: 40px; text-align: center;">Se traslada aleatoriamente al reino objetivo.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 40px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 40px; text-align: center;">!migrate [K][X][Y]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 40px; text-align: center;">Migrar al Reino de destino</td>
+    <td style="width: 93px; padding-left: 30px; height: 40px; text-align: center;">!migrate 60 200 900</td>
+    <td style="width: 120px; padding-left: 30px; height: 40px; text-align: center;">Migrar a las coordenadas K:60 X:200 Y:900</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 40px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 40px; text-align: center;">!recall</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 40px; text-align: center;">Retirar todas las tropas (no incluir las tropas en marcha))</td>
+    <td style="width: 93px; padding-left: 30px; height: 40px; text-align: center;">!recall</td>
+    <td style="width: 120px; padding-left: 30px; height: 40px; text-align: center;">Llama a todas las tropas a tu castillo.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 80px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 80px; text-align: center;">!buildspam [amount] &lrm;[delay]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 80px; text-align: center;">El spam ayuda para Guild Fest/Guild Coins</td>
+    <td style="width: 93px; padding-left: 30px; height: 80px; text-align: center;">!buildspam 120 5</td>
+    <td style="width: 120px; padding-left: 30px; height: 80px; text-align: center;">El banco enviar&aacute; spam de ayuda 120 veces, con un retraso de 5 segundos entre cada compilaci&oacute;n.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 66px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 66px; text-align: center;">!buildspam [stop]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 66px; text-align: center;">Cancelar&aacute; el comando buildspam</td>
+    <td style="width: 93px; padding-left: 30px; height: 66px; text-align: center;">!buildspam stop</td>
+    <td style="width: 120px; padding-left: 30px; height: 66px; text-align: center;">El banco detendr&aacute; la ayuda spam/cancelar&aacute; la compilaci&oacute;n en curso</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 40px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 40px; text-align: center;">!hunt [x] &lrm;[y]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 40px; text-align: center;">Caza el monstruo especificado</td>
+    <td style="width: 93px; padding-left: 30px; height: 40px; text-align: center;">!hunt 150 166</td>
+    <td style="width: 120px; padding-left: 30px; height: 40px; text-align: center;">El banco cazar&aacute; un monstruo ubicado en X:150 Y:166</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 26px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 26px; text-align: center;">!hunt [on/off]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 26px; text-align: center;">Deshabilitar o habilitar la b&uacute;squeda de la cuenta</td>
+    <td style="width: 93px; padding-left: 30px; height: 26px; text-align: center;">!hunt on</td>
+    <td style="width: 120px; padding-left: 30px; height: 26px; text-align: center;">Permite la caza</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 40px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 40px; text-align: center;">!addtitle [player] &lrm;[title]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 40px; text-align: center;">Si el banco es regente, dar&aacute; un t&iacute;tulo.</td>
+    <td style="width: 93px; padding-left: 30px; height: 40px; text-align: center;">!addtitle Shark chief</td>
+    <td style="width: 120px; padding-left: 30px; height: 40px; text-align: center;">El banco le dar&aacute; a Shark el t&iacute;tulo de "Consejero".</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 66px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 66px; text-align: center;">!deltitle [title]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 66px; text-align: center;">El banco eliminar&aacute; el t&iacute;tulo especificado.</td>
+    <td style="width: 93px; padding-left: 30px; height: 66px; text-align: center;">!deltitle chief</td>
+    <td style="width: 120px; padding-left: 30px; height: 66px; text-align: center;">El banco eliminar&aacute; el t&iacute;tulo de Consejero del jugador que lo tiene actualmente.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 66px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 66px; text-align: center;">!whitelist [player] &lrm;[Rank]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 66px; text-align: center;">Acepta a un jugador en Gremio y establece Rango</td>
+    <td style="width: 93px; padding-left: 30px; height: 66px; text-align: center;">!whitelist Shark R4</td>
+    <td style="width: 120px; padding-left: 30px; height: 66px; text-align: center;">Shark ser&aacute; aceptado en el gremio y se le otorgar&aacute; el rango 4.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 53px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 53px; text-align: center;">!blacklist [player]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 53px; text-align: center;">Rechaza a un jugador que postula al gremio.</td>
+    <td style="width: 93px; padding-left: 30px; height: 53px; text-align: center;">!blacklist Shark</td>
+    <td style="width: 120px; padding-left: 30px; height: 53px; text-align: center;">A Shark no se le permitir&aacute; ingresar al gremio (ni se le dar&aacute; una patada)</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 40px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 40px; text-align: center;">!unlistwhite [player]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 40px; text-align: center;">Elimina a un jugador de la lista blanca.</td>
+    <td style="width: 93px; padding-left: 30px; height: 40px; text-align: center;">!unlistwhite Shark</td>
+    <td style="width: 120px; padding-left: 30px; height: 40px; text-align: center;">Tibur&oacute;n ser&aacute; eliminado de la Lista Blanca</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 40px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 40px; text-align: center;">!unlistblack [player]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 40px; text-align: center;">Elimina a un jugador de la lista negra</td>
+    <td style="width: 93px; padding-left: 30px; height: 40px; text-align: center;">!unlistblack Shark</td>
+    <td style="width: 120px; padding-left: 30px; height: 40px; text-align: center;">Shark ser&aacute; eliminado de la Lista Negra</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 26px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 26px; text-align: center;">!purge</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 26px; text-align: center;">Borra el chat del gremio</td>
+    <td style="width: 93px; padding-left: 30px; height: 26px; text-align: center;">!purge</td>
+    <td style="width: 120px; padding-left: 30px; height: 26px; text-align: center;">El chat del gremio se borrar&aacute;.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 40px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 40px; text-align: center;">!abort</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 40px; text-align: center;">Aborta todos los env&iacute;os de RSS</td>
+    <td style="width: 93px; padding-left: 30px; height: 40px; text-align: center;">!abort</td>
+    <td style="width: 120px; padding-left: 30px; height: 40px; text-align: center;">Todos los RSS que est&eacute;n en cola ser&aacute;n cancelados</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 26px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 26px; text-align: center;">!yell [msg]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 26px; text-align: center;">Escribe un mensaje en el chat del gremio.</td>
+    <td style="width: 93px; padding-left: 30px; height: 26px; text-align: center;">!yell hola</td>
+    <td style="width: 120px; padding-left: 30px; height: 26px; text-align: center;">Escribe hola en el chat del gremio.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 66px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 66px; text-align: center;">!quest</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 66px; text-align: center;">Obtiene el estatus de festival del gremio de bancos</td>
+    <td style="width: 93px; padding-left: 30px; height: 66px; text-align: center;">!quest</td>
+    <td style="width: 120px; padding-left: 30px; height: 66px; text-align: center;">Correos solicitando al jugador el estado del festival del gremio del banco</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 40px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 40px; text-align: center;">!guild [tag]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 40px; text-align: center;">Deja el gremio actual y se une a uno nuevo.</td>
+    <td style="width: 93px; padding-left: 30px; height: 40px; text-align: center;">!guild 123</td>
+    <td style="width: 120px; padding-left: 30px; height: 40px; text-align: center;">Deja el gremio e intenta unirse al '123'.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 53px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 53px; text-align: center;">!camp / !campleader [x] &lrm;[y]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 53px; text-align: center;">Env&iacute;a un campamento a x/y</td>
+    <td style="width: 93px; padding-left: 30px; height: 53px; text-align: center;">!camp 100 100</td>
+    <td style="width: 120px; padding-left: 30px; height: 53px; text-align: center;">Env&iacute;a un campamento de 1 tropa a x:100 y:100</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 26px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 26px; text-align: center;">!setgather &lrm;[on/off]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 26px; text-align: center;">Deshabilitar o habilitar la recopilaci&oacute;n para la cuenta</td>
+    <td style="width: 93px; padding-left: 30px; height: 26px; text-align: center;">!setgather off</td>
+    <td style="width: 120px; padding-left: 30px; height: 26px; text-align: center;">Desactiva la reuni&oacute;n</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 53px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 53px; text-align: center;">!snowbeast</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 53px; text-align: center;">Activa la habilidad familiar de la bestia de nieve.</td>
+    <td style="width: 93px; padding-left: 30px; height: 53px; text-align: center;">!snowbeast</td>
+    <td style="width: 120px; padding-left: 30px; height: 53px; text-align: center;">La habilidad Familiares de las bestias de nieve est&aacute; activada.</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 53.2499px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 53.2499px; text-align: center;">!stop [time]</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 53.2499px; text-align: center;">
+    <pre id="tw-target-text" class="tw-data-text tw-text-large tw-ta" dir="ltr" style="padding-left: 30px;" data-placeholder="Traducci&oacute;n" data-ved="2ahUKEwiX1s_R19uBAxXoppUCHX6PATkQ3ewLegQIBhAQ"><span class="Y2IQFc" lang="es">Detiene el banco por "x" Segundos</span></pre>
+    </td>
+    <td style="width: 93px; padding-left: 30px; height: 53.2499px; text-align: center;">!stop 60</td>
+    <td style="width: 120px; padding-left: 30px; height: 53.2499px; text-align: center;">La cuenta se desconectar&aacute; durante 60 segundos</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 26px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 26px; text-align: center;">!reloadacc</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 26px; text-align: center;">Restablecer&aacute; la cuenta a la fuerza</td>
+    <td style="width: 93px; padding-left: 30px; height: 26px; text-align: center;">!reloadacc</td>
+    <td style="width: 120px; padding-left: 30px; height: 26px; text-align: center;">Restablece la cuenta</td>
+    </tr>
+    <tr style="padding-left: 30px; height: 55px;">
+    <td style="width: 125.823px; padding-left: 30px; height: 55px; text-align: center;">!members</td>
+    <td style="width: 196.177px; padding-left: 30px; height: 55px; text-align: center;">Recargar&aacute; con fuerza la lista de jugadores del gremio.</td>
+    <td style="width: 93px; padding-left: 30px; height: 55px; text-align: center;">!members</td>
+    <td style="width: 120px; padding-left: 30px; height: 55px; text-align: center;">Se actualiza la informaci&oacute;n del miembro en el banco.</td>
+    </tr>
+    </tbody>
+    </table>
+    <p class="single-post-wrap" style="text-align: justify;"><!--kg-card-begin: markdown--></p>
+    <p>&nbsp;</p>
+    <table style="height: 2000px; width: 780px; margin-left: auto; margin-right: auto;" border="2" cellspacing="0" cellpadding="10">
+    <thead style="padding-left: 30px;">
+    <tr style="padding-left: 30px; height: 8.99992px;">
+    <td style="width: 35px; height: 8.99992px; vertical-align: middle; text-align: left;" scope="col"><strong>Comandos</strong></td>
+    <th style="width: 193px; height: 8.99992px; text-align: left;"><strong>Funci&oacute;n</strong></th>
+    <th style="width: 85px; height: 8.99992px; text-align: left;"><strong>Ejemplo</strong></th>
+    <th style="width: 97.9583px; height: 8.99992px; text-align: left;"><strong>Resultado</strong></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr style="height: 127px;">
+    <td style="width: 35px; height: 127px; text-align: left;">!findtile [type] [level]</td>
+    <td style="width: 193px; height: 127px; text-align: left;">El banco encontrar&aacute; mosaicos alrededor del banco del castillo.</td>
+    <td style="width: 85px; height: 127px; text-align: left;">!findtile food 4</td>
+    <td style="width: 97.9583px; height: 127px; text-align: left;">El banco buscar&aacute; el mosaico del nivel de alimentos 4 y enviar&aacute; el resultado por correo</td>
+    </tr>
+    <tr style="height: 127px;">
+    <td style="width: 35px; height: 127px; text-align: left;">!findtile any [level]</td>
+    <td style="width: 193px; height: 127px; text-align: left;">El banco encontrar&aacute; mosaicos alrededor del banco del castillo.</td>
+    <td style="width: 85px; height: 127px; text-align: left;">!findtile any 4</td>
+    <td style="width: 97.9583px; height: 127px; text-align: left;">El banco buscar&aacute; cualquier tipo de mosaico de nivel 4 y enviar&aacute; el resultado por correo</td>
+    </tr>
+    <tr style="height: 127px;">
+    <td style="width: 35px; height: 127px; text-align: left;">!findtilelocal [type] [level]</td>
+    <td style="width: 193px; height: 127px; text-align: left;">El banco encontrar&aacute; mosaicos alrededor del castillo que envi&oacute; el comando.</td>
+    <td style="width: 85px; height: 127px; text-align: left;">!findtilelocal food 4</td>
+    <td style="width: 97.9583px; height: 127px; text-align: left;">El banco buscar&aacute; el mosaico del nivel de alimentos 4 y enviar&aacute; el resultado por correo</td>
+    </tr>
+    <tr style="height: 127px;">
+    <td style="width: 35px; height: 127px; text-align: left;">!findmonster [monstername] [level]</td>
+    <td style="width: 193px; height: 127px; text-align: left;">El banco encontrar&aacute; un monstruo alrededor del banco del castillo.</td>
+    <td style="width: 85px; height: 127px; text-align: left;">!findmonster hardrox 2</td>
+    <td style="width: 97.9583px; height: 127px; text-align: left;">El banco buscar&aacute; Hardrox nivel 2 y enviar&aacute; el resultado por correo</td>
+    </tr>
+    <tr style="height: 127px;">
+    <td style="width: 35px; height: 127px; text-align: left;">!findmonster any [level]</td>
+    <td style="width: 193px; height: 127px; text-align: left;">El banco encontrar&aacute; un monstruo alrededor del banco del castillo.</td>
+    <td style="width: 85px; height: 127px; text-align: left;">!findmonster any 2</td>
+    <td style="width: 97.9583px; height: 127px; text-align: left;">El banco buscar&aacute; cualquier monstruo de nivel 2 y enviar&aacute; el resultado por correo.</td>
+    </tr>
+    <tr style="height: 127px;">
+    <td style="width: 35px; height: 127px; text-align: left;">!findmonsterlocal [monstername] [level]</td>
+    <td style="width: 193px; height: 127px; text-align: left;">El banco encontrar&aacute; un monstruo alrededor del castillo que envi&oacute; la orden.</td>
+    <td style="width: 85px; height: 127px; text-align: left;">!findmonsterlocal hardrox 2</td>
+    <td style="width: 97.9583px; height: 127px; text-align: left;">El banco buscar&aacute; Hardrox nivel 2 y enviar&aacute; el resultado por correo</td>
+    </tr>
+    <tr style="height: 127px;">
+    <td style="width: 35px; height: 127px; text-align: left;">!finddarknest [level]</td>
+    <td style="width: 193px; height: 127px; text-align: left;">El banco encontrar&aacute; un nido m&aacute;s oscuro alrededor del banco.</td>
+    <td style="width: 85px; height: 127px; text-align: left;">!findnest 3</td>
+    <td style="width: 97.9583px; height: 127px; text-align: left;">El banco buscar&aacute; un nido oscuro de nivel 3 en todo el banco y enviar&aacute; el resultado por correo.</td>
+    </tr>
+    <tr style="height: 168px;">
+    <td style="width: 35px; height: 168px; text-align: left;">!findnestlocal [level]</td>
+    <td style="width: 193px; height: 168px; text-align: left;">El banco encontrar&aacute; un nido oscuro alrededor del castillo que envi&oacute; el comando.</td>
+    <td style="width: 85px; height: 168px; text-align: left;">!findnestlocal 3</td>
+    <td style="width: 97.9583px; height: 168px; text-align: left;">El banco buscar&aacute; un Darknest de nivel 3 alrededor del jugador que envi&oacute; el comando y enviar&aacute; el resultado por correo.</td>
+    </tr>
+    </tbody>
+    </table>
+    <h3 id="balance" style="text-align: center;">&nbsp;</h3>
+    <p class="single-post-wrap" style="text-align: center;"><!--kg-card-begin: markdown--></p>
+    <table style="width: 780px; height: 2000px; margin-left: auto; margin-right: auto;" border="2" cellspacing="0" cellpadding="10">
+    <thead>
+    <tr style="height: 13px;">
+    <th style="height: 13px; width: 97.0729px;">Comandos</th>
+    <th style="height: 13px; width: 202.01px;">Funci&oacute;n</th>
+    <th style="height: 13px; width: 97.7292px;">Ejemplo</th>
+    <th style="height: 13px; width: 110.854px;">Resultado</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr style="height: 26px;">
+    <td style="height: 26px; width: 97.0729px;">!bal</td>
+    <td style="height: 26px; width: 202.01px;">Comprueba tu saldo</td>
+    <td style="height: 26px; width: 97.7292px;">!bal</td>
+    <td style="height: 26px; width: 110.854px;">Informe de cuanto RSS enviaste al Banco</td>
+    </tr>
+    <tr style="height: 26px;">
+    <td style="height: 26px; width: 97.0729px;">!adminbal [player]</td>
+    <td style="height: 26px; width: 202.01px;">Consultar el saldo del jugador.</td>
+    <td style="height: 26px; width: 97.7292px;">!bal Shark</td>
+    <td style="height: 26px; width: 110.854px;">Informe de cu&aacute;nto RSS Shark envi&oacute; al Banco</td>
+    </tr>
+    <tr style="height: 26px;">
+    <td style="height: 26px; width: 97.0729px;">!adminbal</td>
+    <td style="height: 26px; width: 202.01px;">Consultar el saldo RSS del Banco</td>
+    <td style="height: 26px; width: 97.7292px;">!adminbal</td>
+    <td style="height: 26px; width: 110.854px;">Informe de cuanto RSS tiene el Banco</td>
+    </tr>
+    <tr style="height: 40px;">
+    <td style="height: 40px; width: 97.0729px;">!adminbag</td>
+    <td style="height: 40px; width: 202.01px;">Consulta el RSS Saldo de la Bolsa del Banco</td>
+    <td style="height: 40px; width: 97.7292px;">!adminbag</td>
+    <td style="height: 40px; width: 110.854px;">Informe de cuanto RSS tiene el Banco en bolsas</td>
+    </tr>
+    <tr style="height: 53px;">
+    <td style="height: 53px; width: 97.0729px;">!setbal [player] &lrm;[type] &lrm;[amount]</td>
+    <td style="height: 53px; width: 202.01px;">Establece manualmente el saldo RSS en una cuenta</td>
+    <td style="height: 53px; width: 97.7292px;">!setbal Shark food 100M</td>
+    <td style="height: 53px; width: 110.854px;">Establece el saldo de alimentos del tibur&oacute;n en 100 millones (permiti&eacute;ndole solicitar 100 millones de alimentos al banco)</td>
+    </tr>
+    <tr style="height: 34px;">
+    <td style="height: 34px; width: 97.0729px;">!setacc &lrm;[player]</td>
+    <td style="height: 34px; width: 202.01px;">Establece que todo el saldo se acreditar&aacute; a otra cuenta.</td>
+    <td style="height: 34px; width: 97.7292px;">!setacc Shark</td>
+    <td style="height: 34px; width: 110.854px;">Todo el saldo que env&iacute;es al Banco ser&aacute; acreditado en la cuenta Shark</td>
+    </tr>
+    <tr style="height: 40px;">
+    <td style="height: 40px; width: 97.0729px;">!transfer [player] &lrm;[type] &lrm;[amount]</td>
+    <td style="height: 40px; width: 202.01px;">Transfiere el saldo a otro jugador</td>
+    <td style="height: 40px; width: 97.7292px;">!transfer Shark</td>
+    <td style="height: 40px; width: 110.854px;">Enviaste 50 millones de oro al banco, despu&eacute;s del comando esos 50 millones se acreditan a Shark.</td>
+    </tr>
+    <tr style="height: 45.7291px;">
+    <td style="height: 45.7291px; width: 97.0729px;">!setrsslimit [type] &lrm;[amount]</td>
+    <td style="height: 45.7291px; width: 202.01px;">Establece un l&iacute;mite para RSS del cual el banco no bajar&aacute;</td>
+    <td style="height: 45.7291px; width: 97.7292px;">!setrsslimit gold 100M</td>
+    <td style="height: 45.7291px; width: 110.854px;">Si el banco tiene menos de 100 millones de oro, ya no enviar&aacute; oro.</td>
+    </tr>
+    </tbody>
+    </table>
+    <p class="single-post-wrap" style="text-align: center;"><!--kg-card-end: markdown--></p>
+    <h3 id="resource" style="text-align: center;">&nbsp;</h3>
+    <p class="single-post-wrap" style="text-align: center;"><!--kg-card-begin: markdown--></p>
+    <table style="width: 780px; height: 2000px; margin-left: auto; margin-right: auto;" border="2" cellspacing="0" cellpadding="10">
+    <thead>
+    <tr style="height: 13.9167px;">
+    <th style="width: 106.312px; height: 13.9167px;">Comandos</th>
+    <th style="width: 245.354px; height: 13.9167px;">Funci&oacute;n</th>
+    <th style="width: 92.0208px; height: 13.9167px;">Ejemplo</th>
+    <th style="width: 146.979px; height: 13.9167px;">Resultado</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr style="height: 26px;">
+    <td style="width: 106.312px; height: 26px;">![type]&lrm; &lrm;[amount]</td>
+    <td style="width: 245.354px; height: 26px;">Env&iacute;a un RSS espec&iacute;fico</td>
+    <td style="width: 92.0208px; height: 26px;">!food 5M</td>
+    <td style="width: 146.979px; height: 26px;">El banco env&iacute;a 5M de Alimentos</td>
+    </tr>
+    <tr style="height: 40px;">
+    <td style="width: 106.312px; height: 40px;">!rss [F]&lrm; [S]&lrm; [W]&lrm; [O]&lrm; [G]</td>
+    <td style="width: 245.354px; height: 40px;">Env&iacute;a todo tipo de RSS</td>
+    <td style="width: 92.0208px; height: 40px;">!rss 5M 5M 5M 5M 0</td>
+    <td style="width: 146.979px; height: 40px;">El banco env&iacute;a 5M de todos los RSS (excepto Gold)</td>
+    </tr>
+    <tr style="height: 40px;">
+    <td style="width: 106.312px; height: 40px;">!donate[type] [player]&lrm; [amount]</td>
+    <td style="width: 245.354px; height: 40px;">Env&iacute;a RSS a un jugador espec&iacute;fico</td>
+    <td style="width: 92.0208px; height: 40px;">!donatefood Shark 5M</td>
+    <td style="width: 146.979px; height: 40px;">El banco env&iacute;a 5M Food al jugador llamado "Shark"</td>
+    </tr>
+    <tr style="height: 40px;">
+    <td style="width: 106.312px; height: 40px;">!admin[type]&lrm; [player]&lrm; [amount]</td>
+    <td style="width: 245.354px; height: 40px;">Env&iacute;a RSS a un jugador espec&iacute;fico</td>
+    <td style="width: 92.0208px; height: 40px;">!adminfood Shar 5M</td>
+    <td style="width: 146.979px; height: 40px;">El banco env&iacute;a 5M Food al jugador llamado "Shark"</td>
+    </tr>
+    <tr style="height: 66px;">
+    <td style="width: 106.312px; height: 66px;">!adminrss [F]&lrm; [S]&lrm; [W]&lrm; [O] &lrm;[G] &lrm;[player]</td>
+    <td style="width: 245.354px; height: 66px;">Env&iacute;a todo tipo de RSS</td>
+    <td style="width: 92.0208px; height: 66px;">!admin rss 0 5M 5M 5M 5M Shark</td>
+    <td style="width: 146.979px; height: 66px;">El banco env&iacute;a 5 millones de todos los RSS (excepto Comida) al jugador llamado "Tibur&oacute;n"</td>
+    </tr>
+    </tbody>
+    </table>
+    <!-- Script JavaScript -->
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <script>
+        // Función para obtener el mensaje según la opción seleccionada
+        function getWhatsAppMessage() {
+            var subscriptionType = document.querySelector('input[name="subscription-type"]:checked').value;
+            var quantity = document.querySelector('.input-quantity').value;
+            var country = document.getElementById("country").value;
+            var paymentMethod = document.getElementById("paymentMethod").value;
+
+            var message = "¡Hola! Estoy interesado en la suscripción " + subscriptionType;
+            
+            if (subscriptionType === "mensuales") {
+                message += " por $7 el primer mes, $4 mensuales.";
+            } else {
+                message += " por $7 por mes.";
+            }
+
+            message += " Cantidad: " + quantity + ".";
+            message += " Método de pago: " + paymentMethod + " (" + country + ").";
+
+            return message;
+        }
+
+        // Función para manejar el clic en el enlace de WhatsApp
+        function handleWhatsAppClick(event) {
+            event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+            var message = encodeURIComponent(getWhatsAppMessage());
+            var whatsappURL = "https://wa.me/5492216424205?text=" + message;
+            window.open(whatsappURL, "_blank");
+        }
+
+        // Agregar un evento de clic al enlace de WhatsApp
+        var whatsappLink = document.getElementById('whatsapp-link');
+        whatsappLink.addEventListener("click", handleWhatsAppClick);
+
+        // Actualizar opciones del método de pago según el país seleccionado
+        document.getElementById("country").addEventListener("change", function() {
+            var selectedCountry = this.value;
+            var paymentMethodSelect = document.getElementById("paymentMethod");
+            var paymentOptions = paymentMethodSelect.querySelectorAll("option");
+            
+            paymentOptions.forEach(function(option) {
+                if (option.getAttribute("data-country") === selectedCountry || option.getAttribute("data-country") === "Otros") {
+                    option.style.display = "block";
+                } else {
+                    option.style.display = "none";
+                }
+            });
+        });
+
+        // Inicialmente, mostrar opciones de Argentina
+        document.getElementById("country").dispatchEvent(new Event("change"));
+    </script>
+</body>
+</html>
